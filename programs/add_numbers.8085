@@ -1,0 +1,17 @@
+LXI H,8000H 		;Point to LSB of first operand
+LXI D,8002H  		;Point to LSB of second address
+LDAX D 		;Load Acc with content pointed by DE
+ADD M		;Add memory element pointed by HL with Acc
+MOV C, A		;Store LSB result at C
+INX H		;Point to next byte of first operand
+INX D		;Point to next byte of second operand
+LDAX D		;Load Acc with content pointed by DE
+ADC M  		;Add memory element pointed by HL with Acc+ Carry
+MOV B,A 		;Store the MSB at B
+MOV H,B		;Move B to H
+MOV L,C 		;Move C to L
+SHLD 8050H		;Store the result at 8050H and 8051H
+JNC DONE		;Skip to end
+MVI A, 01H		;Load 1 to Acc
+STA 8052H		;Store Acc content into 8052H
+DONE: HLT		;Terminate the program
