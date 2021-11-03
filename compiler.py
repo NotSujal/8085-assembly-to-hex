@@ -20,7 +20,7 @@ def terminate():
 
 def compile(event=""):
 
-    # try:
+    try:
         load_location = get_load_location()
         if "h" in load_location:
             load_location = load_location.replace("h","")
@@ -34,9 +34,9 @@ def compile(event=""):
             output_text += f"{hex(int(load_location,base=16) + transpiled_list.index(codes))}-> {codes} \n"
         code_output.insert("1.0",output_text)
         code_output.config(foreground="black")
-    # except Exception as e:
-    #     code_output.insert("1.0",f"\n{e}")
-    #     code_output.config(foreground="red")
+    except Exception as e:
+        code_output.insert("1.0",f"\n{e}")
+        code_output.config(foreground="red")
 
 def new(even=""):
     save_as()
