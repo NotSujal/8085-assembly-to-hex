@@ -18,6 +18,6 @@ It uses the starting locations to find the locations of lables.
 ![Editor](https://raw.githubusercontent.com/NotSujal/8085-assembly-to-hex/main/images/editor.png)
 ![Translator](https://raw.githubusercontent.com/NotSujal/8085-assembly-to-hex/main/images/translator.png)
 
-images\translator.png## Flaws
+## Flaws
 Yes, it only translates the code to hexadecimal. If you want to make a runner for it you are always welcome.
 Mistakes in code are very hard to find, it may lead to improper output.
